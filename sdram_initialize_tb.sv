@@ -18,10 +18,8 @@ module sdram_initialize_tb();
 	logic DRAM_LDQM; //CONTROL input buffer (write mode; low = active;) >< control output buffer (read mode; low = inactive)
 	logic DRAM_UDQM;	//
 	logic [15:0]DRAM_DQ;
-	logic [15:0]  counter     = 16'h0;
-	logic ctr_reset;
 
-	sdram_initalize sdram_initalize_0(.*);
+	sdram_initialize U2(.*, .ireq(ireq));
 	
 	parameter CLK_FREQ = 200;
 	parameter HALF_CLK_FREQ = 100;
@@ -42,13 +40,14 @@ module sdram_initialize_tb();
 	
 	//	CKE Loop generate
 	initial begin
-		
+
 		ireq = 1;
-		#50;
-		for (int i = 0;i < 40 ;i++ ) begin
-			#100;
-			ireq = ~ireq;
-		end
+
+		// #50;
+		// for (int i = 0;i < 40 ;i++ ) begin
+		// 	#100;
+		// 	ireq = ~ireq;
+		// end
 	end
 	
 	// // reset
@@ -56,6 +55,9 @@ module sdram_initialize_tb();
 	// 	ireset = 1;
 	// 	#20;
 	 	ireset = 1;
+		// #600;
+		#100;
+	 	ireset = 0;
 	 end
 
 	// initial ireq = 0; 

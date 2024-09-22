@@ -7,25 +7,25 @@
 // 	Burst           -- Sequential M3=0;
 //  	Burst Length    -- 8 M[0-2]= 011;
 
-module sdram_initalize(	
-   input                       iclk,
-   input                       ireset,
-   input                       ireq,	//Request signal to initialize the memory
-   input                       ienb,	//Enable signal to start the initialization
-   output                      ofin,	//Acknowledgment signal to indicate to other modules, 
+module sdram_initialize(	
+   input logic                       iclk,
+   input logic                       ireset,
+   input logic                       ireq,	//Request signal to initialize the memory
+   input logic                       ienb,	//Enable signal to start the initialization
+   output logic                      ofin,	//Acknowledgment signal to indicate to other modules, 
 													//when initialization is done
     
-   output		          		DRAM_CLK,
-   output		          		DRAM_CKE,
-   output		    [12:0]		DRAM_ADDR,		
-	output		     [1:0]		DRAM_BA,		//bank select
-	output		          		DRAM_CAS_N,	//column access
-	output		          		DRAM_CS_N,	//chip select
-	output		          		DRAM_RAS_N,	//row access strobe
-	output		          		DRAM_WE_N,	//write enable strobe
-   output		          		DRAM_LDQM, //CONTROL input buffer (write mode, low = active,) >< control output buffer (read mode, low = inactive)
-   output		          		DRAM_UDQM,	//
-   output 		    [15:0]		DRAM_DQ	//store input data during write command (latched), print output data when read command (buffered)
+   output logic		          		DRAM_CLK,
+   output logic		          		DRAM_CKE,
+   output logic		    [12:0]		DRAM_ADDR,		
+	output logic		     [1:0]		DRAM_BA,	//bank select
+	output logic		          		DRAM_CAS_N,	//column access
+	output logic		          		DRAM_CS_N,	//chip select
+	output logic		          		DRAM_RAS_N,	//row access strobe 
+	output logic		          		DRAM_WE_N,	//write enable strobe
+   output logic		          		DRAM_LDQM, //CONTROL input buffer (write mode, low = active,) >< control output logic buffer (read mode, low = inactive)
+   output logic		          		DRAM_UDQM,	//
+   output logic 		    [15:0]		DRAM_DQ//store input data during write command (latched), print output data when read command (buffered)
 //	
 //	//////////// KEY //////////
 //	input 		     [1:0]		KEY,
@@ -60,23 +60,17 @@ module sdram_initalize(
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
-	reg      [2:0]  state       = 3'b000;	//State register
-	reg      [2:0]  next_state;
-	
-	
-
-	reg      [3:0]  command     = 4'h0;		//Command register to be sent to SDRAM
-	reg     [12:0]  address     = 13'h0;	//Address register
-	reg      [1:0]  bank        = 2'b00;	//Bank register
-	reg      [1:0]  dqm         = 2'b11;	//Masking registers for write mode making the input data buffer 
-
-	reg             ready       = 1'b0;
-
-	reg     [15:0]  counter     = 16'h0;
-	reg             ctr_reset   = 0;
-
-	wire	ref_cycles;
-	wire	init_begin_counter;
+	logic      [2:0]  next_state;
+	logic      [2:0]  state       = 3'b000;	//State register
+	logic      [3:0]  command     = 4'h0;		//Command register to be sent to SDRAM
+	logic     [12:0]  address     = 13'h0;	//Address register
+	logic      [1:0]  bank        = 2'b00;	//Bank register
+	logic      [1:0]  dqm         = 2'b11;	//Masking registers for write mode making the input data buffer 
+	logic             ready       = 1'b0;
+	logic     [15:0]  counter     = 16'h0;
+	logic             ctr_reset   = 0;
+	logic	ref_cycles;
+	logic	init_begin_counter;
 	
 // STATES - State
 localparam IDLE      = 3'b000,
