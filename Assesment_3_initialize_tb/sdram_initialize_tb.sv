@@ -32,7 +32,7 @@ module sdram_initialize_tb();
 	initial begin
 		#HALF_CLK_FREQ;
 		ienb = 1;
-		 for (int i = 0;i < 40 ;i++ ) begin
+		 for (int i = 0;i < 2 ;i++ ) begin
 		 	#100;
 		 	ienb = ~ienb;
 		end
@@ -40,7 +40,7 @@ module sdram_initialize_tb();
 	
 	//	CKE Loop generate
 	initial begin
-
+		#100;
 		ireq = 1;
 
 		// #50;

@@ -71,23 +71,21 @@ module sdram_initialize(
 	logic             ctr_reset   = 0;
 	logic	ref_cycles;
 	logic	init_begin_counter;
-	
+ 
 // STATES - State
-localparam IDLE      = 3'b000,
-           INIT_NOP1 = 3'b001,	//
-           INIT_PRE  = 3'b010,	//PRECHARGE	
-           INIT_REF  = 3'b011,	//REFRESH
-           INIT_NOP2 = 3'b100,
-           INIT_LOAD = 3'b101,	//load MODE
-           INIT_NOP3 = 3'b110,
-           INIT_FIN  = 3'b111;	//ACTIVE
-
+	parameter IDLE      = 3'b000;
+	parameter INIT_NOP1 = 3'b001;	//
+	parameter INIT_PRE  = 3'b010;	//PRECHARGE	
+	parameter INIT_REF  = 3'b011;	//REFRESH
+	parameter INIT_NOP2 = 3'b100;
+	parameter INIT_LOAD = 3'b101;	//load MODE
+	parameter INIT_NOP3 = 3'b110;
+	parameter INIT_FIN  = 3'b111;	//ACT
 //Commands send to SDRAM
 	parameter CMD_NOP = 4'b0111;
 	parameter CMD_MRS = 4'b0000;		//Mode or MRS
 	parameter CMD_REF = 4'b0001;		//Auto Refresh
 	parameter CMD_PALL = 4'b0010;		//Precharge ALL BANK
-
 
 	assign ofin                                             = ready;
 
@@ -109,7 +107,7 @@ localparam IDLE      = 3'b000,
 
 	//ref_cycles > 16 - refresh, nop - 8 times
 	assign ref_cycles = (counter >= 16);
-	assign init_begin_counter = (counter >= 10000);
+	assign init_begin_counter = (counter >= 16);
 
 	//State Transition 
 	always @(posedge iclk)
