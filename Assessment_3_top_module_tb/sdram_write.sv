@@ -63,7 +63,8 @@ parameter           WRIT_FIN = 3'b110;
 	assign {DRAM_UDQM, DRAM_LDQM}                           = ienb ? dqm            : 2'bz;
 	assign DRAM_CLK                                         = ienb ? ~iclk          : 1'bz;
 	assign DRAM_CKE                                         = ienb ? 1'b1           : 1'bz;
-	assign DRAM_DQ                                          = ienb ? data  				: 16'bz;
+	assign DRAM_DQ                                          = data  				;
+	// assign DRAM_DQ                                          = ienb ? data  				: 16'bz;
 
 	always @(posedge iclk or posedge ctr_reset)
 	begin

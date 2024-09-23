@@ -1,22 +1,29 @@
-{D:/OneDrive - RMIT University/RMIT/Advanced Digital Design 2 - EEET2476/Assessment_3_tb/Assessment_3_top_module_tb/sdram_controller_tb.sv} {1 {vlog -work work -sv -stats=none {D:/OneDrive - RMIT University/RMIT/Advanced Digital Design 2 - EEET2476/Assessment_3_tb/Assessment_3_top_module_tb/sdram_controller_tb.sv}
+C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3/Assessment_3_top_module_tb/sdram_controller_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3/Assessment_3_top_module_tb/sdram_controller_tb.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module sdram_controller_tb
 
 Top level modules:
 	sdram_controller_tb
 
-} {} {}} {D:/OneDrive - RMIT University/RMIT/Advanced Digital Design 2 - EEET2476/Assessment_3_tb/Assessment_3_top_module_tb/sdram_initialize.sv} {1 {vlog -work work -sv -stats=none {D:/OneDrive - RMIT University/RMIT/Advanced Digital Design 2 - EEET2476/Assessment_3_tb/Assessment_3_top_module_tb/sdram_initialize.sv}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module sdram_initialize
-
-Top level modules:
-	sdram_initialize
-
-} {} {}} {D:/OneDrive - RMIT University/RMIT/Advanced Digital Design 2 - EEET2476/Assessment_3_tb/Assessment_3_top_module_tb/sdram_write.sv} {1 {vlog -work work -sv -stats=none {D:/OneDrive - RMIT University/RMIT/Advanced Digital Design 2 - EEET2476/Assessment_3_tb/Assessment_3_top_module_tb/sdram_write.sv}
+} {} {}} C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3/Assessment_3_top_module_tb/sdram_write.sv {1 {vlog -work work -sv -stats=none C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3/Assessment_3_top_module_tb/sdram_write.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module sdram_write
 
 Top level modules:
 	sdram_write
+
+} {} {}} C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3/Assessment_3_top_module_tb/sdram_controller.sv {1 {vlog -work work -sv -stats=none C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3/Assessment_3_top_module_tb/sdram_controller.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module sdram_controller
+
+Top level modules:
+	sdram_controller
+
+} {} {}} C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3/Assessment_3_top_module_tb/sdram_read.sv {1 {vlog -work work -sv -stats=none C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3/Assessment_3_top_module_tb/sdram_read.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module sdram_read
+
+Top level modules:
+	sdram_read
 
 } {} {}}

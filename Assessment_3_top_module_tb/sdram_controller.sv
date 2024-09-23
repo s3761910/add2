@@ -25,17 +25,11 @@ module sdram_controller(
 	output logic		          		DRAM_CLK,
 	output logic		          		DRAM_CS_N,
 	// inout logic	  		    [15:0]		DRAM_DQ,
-	output logic 			[15:0] 		dq_write,
 	output logic		          		DRAM_LDQM,
 	output logic		          		DRAM_RAS_N,
 	output logic		          		DRAM_UDQM,
 	output logic		          		DRAM_WE_N
 );
-
-logic 				[15:0] 		dq_read;
-logic	  		    [15:0]		DRAM_DQ;
-assign DRAM_DQ = dq_write;
-assign dq_read = iread_req? DRAM_DQ:iwrite_data;
 
 //=======================================================
 //  REG/WIRE declarations
@@ -70,6 +64,12 @@ assign dq_read = iread_req? DRAM_DQ:iwrite_data;
 	logic     [1:0]  read_ibank;
 	logic            read_fin;
 
+logic 				[15:0] 		dq_read;
+logic 				[15:0] 		dq_write;
+logic 				[15:0] 		dq_init;
+// logic	  		    [15:0]		DRAM_DQ;
+// assign dq_read = iread_req? DRAM_DQ:'z;
+assign dq_read = dq_write;
 
 // STATES - State
 parameter 			INIT_START      = 4'b0000;
@@ -303,7 +303,7 @@ parameter           READ = 3'b100;
 		.DRAM_CKE(DRAM_CKE),
 		.DRAM_CLK(DRAM_CLK),
 		.DRAM_CS_N(DRAM_CS_N),
-		.DRAM_DQ(dq_write),
+		.DRAM_DQ(dq_init),
 		.DRAM_LDQM(DRAM_LDQM),
 		.DRAM_RAS_N(DRAM_RAS_N),
 		.DRAM_UDQM(DRAM_UDQM),

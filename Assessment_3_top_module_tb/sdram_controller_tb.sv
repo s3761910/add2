@@ -24,7 +24,7 @@ module sdram_controller_tb();
     logic		          		DRAM_UDQM;
     logic		          		DRAM_WE_N;
 
-    logic [15:0] dq;
+    // logic [15:0] dq;
     // assign dq = DRAM_DQ;
 
     sdram_controller U2(.*);
@@ -53,30 +53,8 @@ module sdram_controller_tb();
         #400;
         iread_req = 0;
     end
-
-    // initial begin
-    //     iwrite_req = 1;
-    //     iwrite_address = 0;
-    //     iwrite_data = 19;
-    // end
-    
-    // //	CKE Loop generate
-	// initial begin
-	// 	#HALF_CLK_FREQ;
-	// 	ienb = 1;
-	// 	 for (int i = 0;i < 2 ;i++ ) begin
-	// 	 	#100;
-	// 	 	ienb = ~ienb;
-	// 	end
-	// end
 	
-	// //	CKE Loop generate
-	// initial begin
-	// 	#100;
-	// 	ireq = 1;
-	// end
-	
-	 initial begin 
+	initial begin 
 	 	ireset = 1;
 		#200;
 	 	ireset = 0;
