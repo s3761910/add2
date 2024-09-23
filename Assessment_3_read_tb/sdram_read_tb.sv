@@ -31,6 +31,16 @@ module sdram_read_tb();
 	//Generate the clock signal (cycle is 100ns)
 	initial iclk = 0; 
 	always	#100 iclk = ~iclk;
+
+	initial begin
+		// irow = 1;
+		// icolumn = 1;
+		// ibank = 1;
+		irow = 0;
+		icolumn = 0;
+		ibank = 0;
+		DRAM_DQ = 29;
+	end
     
     //	CKE Loop generate
 	initial begin
