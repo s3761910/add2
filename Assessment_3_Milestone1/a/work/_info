@@ -1,0 +1,154 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/OneDrive - RMIT University/RMIT/Advanced Digital Design 2 - EEET2476/23_9
+vsdram_controller
+Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z1 !s110 1727152535
+!i10b 1
+!s100 aFB>R0:h7b`4497aiB5Ba1
+I0db6aW[_UD@2?PKXg^cF@1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s105 sdram_controller_sv_unit
+S1
+Z3 dC:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone2/Assessment_3_top_module_tb
+w1727151588
+8C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone2/Assessment_3_top_module_tb/sdram_controller.sv
+FC:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone2/Assessment_3_top_module_tb/sdram_controller.sv
+L0 6
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1727152535.000000
+!s107 C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone2/Assessment_3_top_module_tb/sdram_controller.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone2/Assessment_3_top_module_tb/sdram_controller.sv|
+!i113 1
+Z6 o-work work -sv
+Z7 tCvgOpt 0
+vsdram_controller_auto_tb
+R0
+R1
+!i10b 1
+!s100 <eXod7lE_c_SZ]^YQbEP[1
+I8eD7bdE_mb1;L<5LKYGYn3
+R2
+Z8 !s105 sdram_controller_auto_tb_sv_unit
+S1
+R3
+w1727152365
+8C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone2/Assessment_3_top_module_tb/sdram_controller_auto_tb.sv
+FC:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone2/Assessment_3_top_module_tb/sdram_controller_auto_tb.sv
+L0 2
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone2/Assessment_3_top_module_tb/sdram_controller_auto_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone2/Assessment_3_top_module_tb/sdram_controller_auto_tb.sv|
+!i113 1
+R6
+R7
+vsdram_controller_tb
+R0
+!s110 1727148812
+!i10b 1
+!s100 MBJ`CB]0Dh0JK=O6JW]eE3
+I<<D8f4Ojf?eM@2?AIU>Ud3
+R2
+R8
+S1
+dC:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_top_module_tb
+w1727148799
+8C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_top_module_tb/sdram_controller_auto_tb.sv
+FC:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_top_module_tb/sdram_controller_auto_tb.sv
+L0 2
+R4
+r1
+!s85 0
+31
+!s108 1727148812.000000
+!s107 C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_top_module_tb/sdram_controller_auto_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_top_module_tb/sdram_controller_auto_tb.sv|
+!i113 1
+R6
+R7
+vsdram_initialize
+R0
+R1
+!i10b 1
+!s100 910_kDZl;3]]hOWD_;ZzB0
+IDIol4<Hj]1R0A7AidFA<O0
+R2
+!s105 sdram_initialize_sv_unit
+S1
+R3
+Z9 w1727143638
+8C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone2/Assessment_3_top_module_tb/sdram_initialize.sv
+FC:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone2/Assessment_3_top_module_tb/sdram_initialize.sv
+L0 10
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone2/Assessment_3_top_module_tb/sdram_initialize.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone2/Assessment_3_top_module_tb/sdram_initialize.sv|
+!i113 1
+R6
+R7
+vsdram_read
+R0
+R1
+!i10b 1
+!s100 87hR[4fW9TCf4La7HUQo]3
+ILL6YQ8[h41:OBhfSC:Qa[1
+R2
+!s105 sdram_read_sv_unit
+S1
+R3
+R9
+8C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone2/Assessment_3_top_module_tb/sdram_read.sv
+FC:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone2/Assessment_3_top_module_tb/sdram_read.sv
+L0 4
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone2/Assessment_3_top_module_tb/sdram_read.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone2/Assessment_3_top_module_tb/sdram_read.sv|
+!i113 1
+R6
+R7
+vsdram_write
+R0
+R1
+!i10b 1
+!s100 5A]@FN6OOPA`TR11e^=eB3
+I[0^]]SmT^1l2ezOdFCWb:3
+R2
+!s105 sdram_write_sv_unit
+S1
+R3
+R9
+8C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone2/Assessment_3_top_module_tb/sdram_write.sv
+FC:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone2/Assessment_3_top_module_tb/sdram_write.sv
+L0 5
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone2/Assessment_3_top_module_tb/sdram_write.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone2/Assessment_3_top_module_tb/sdram_write.sv|
+!i113 1
+R6
+R7

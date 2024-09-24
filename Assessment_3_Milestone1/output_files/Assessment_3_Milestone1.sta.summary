@@ -1,0 +1,181 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'CLOCK_50'
+Slack : -6.128
+TNS   : -83.150
+
+Type  : Slow 1100mV 85C Model Setup 'sdram_controller:u0|sdram_read:sdram_read|state.READ_READING'
+Slack : -4.446
+TNS   : -34.568
+
+Type  : Slow 1100mV 85C Model Setup 'sdram_controller:u0|state.READ_ACK'
+Slack : -2.031
+TNS   : -2.031
+
+Type  : Slow 1100mV 85C Model Hold 'CLOCK_50'
+Slack : 0.258
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'sdram_controller:u0|state.READ_ACK'
+Slack : 1.378
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'sdram_controller:u0|sdram_read:sdram_read|state.READ_READING'
+Slack : 3.383
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'CLOCK_50'
+Slack : -0.739
+TNS   : -17.081
+
+Type  : Slow 1100mV 85C Model Removal 'CLOCK_50'
+Slack : 0.539
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.394
+TNS   : -46.254
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'sdram_controller:u0|sdram_read:sdram_read|state.READ_READING'
+Slack : 0.401
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'sdram_controller:u0|state.READ_ACK'
+Slack : 0.435
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'CLOCK_50'
+Slack : -5.795
+TNS   : -81.755
+
+Type  : Slow 1100mV 0C Model Setup 'sdram_controller:u0|sdram_read:sdram_read|state.READ_READING'
+Slack : -4.485
+TNS   : -35.216
+
+Type  : Slow 1100mV 0C Model Setup 'sdram_controller:u0|state.READ_ACK'
+Slack : -1.988
+TNS   : -1.988
+
+Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
+Slack : 0.071
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'sdram_controller:u0|state.READ_ACK'
+Slack : 1.360
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'sdram_controller:u0|sdram_read:sdram_read|state.READ_READING'
+Slack : 3.422
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Recovery 'CLOCK_50'
+Slack : -0.695
+TNS   : -15.435
+
+Type  : Slow 1100mV 0C Model Removal 'CLOCK_50'
+Slack : 0.508
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.394
+TNS   : -50.627
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'sdram_controller:u0|sdram_read:sdram_read|state.READ_READING'
+Slack : 0.398
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'sdram_controller:u0|state.READ_ACK'
+Slack : 0.424
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'CLOCK_50'
+Slack : -3.982
+TNS   : -26.681
+
+Type  : Fast 1100mV 85C Model Setup 'sdram_controller:u0|sdram_read:sdram_read|state.READ_READING'
+Slack : -2.240
+TNS   : -17.130
+
+Type  : Fast 1100mV 85C Model Setup 'sdram_controller:u0|state.READ_ACK'
+Slack : -0.956
+TNS   : -0.956
+
+Type  : Fast 1100mV 85C Model Hold 'CLOCK_50'
+Slack : 0.153
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'sdram_controller:u0|state.READ_ACK'
+Slack : 1.043
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'sdram_controller:u0|sdram_read:sdram_read|state.READ_READING'
+Slack : 2.084
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'CLOCK_50'
+Slack : 0.032
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'CLOCK_50'
+Slack : 0.288
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.090
+TNS   : -7.496
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'sdram_controller:u0|sdram_read:sdram_read|state.READ_READING'
+Slack : 0.446
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'sdram_controller:u0|state.READ_ACK'
+Slack : 0.477
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'CLOCK_50'
+Slack : -3.371
+TNS   : -19.547
+
+Type  : Fast 1100mV 0C Model Setup 'sdram_controller:u0|sdram_read:sdram_read|state.READ_READING'
+Slack : -2.153
+TNS   : -16.611
+
+Type  : Fast 1100mV 0C Model Setup 'sdram_controller:u0|state.READ_ACK'
+Slack : -0.810
+TNS   : -0.810
+
+Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
+Slack : 0.135
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'sdram_controller:u0|state.READ_ACK'
+Slack : 0.922
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'sdram_controller:u0|sdram_read:sdram_read|state.READ_READING'
+Slack : 2.049
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'CLOCK_50'
+Slack : 0.091
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'CLOCK_50'
+Slack : 0.263
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.088
+TNS   : -7.557
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'sdram_controller:u0|sdram_read:sdram_read|state.READ_READING'
+Slack : 0.458
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'sdram_controller:u0|state.READ_ACK'
+Slack : 0.483
+TNS   : 0.000
+
+------------------------------------------------------------

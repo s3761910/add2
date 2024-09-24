@@ -1,0 +1,36 @@
+C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone2/Assessment_3_top_module_tb/sdram_controller_auto_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone2/Assessment_3_top_module_tb/sdram_controller_auto_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module sdram_controller_auto_tb
+
+Top level modules:
+	sdram_controller_auto_tb
+
+} {} {}} C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone2/Assessment_3_top_module_tb/sdram_initialize.sv {1 {vlog -work work -sv -stats=none C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone2/Assessment_3_top_module_tb/sdram_initialize.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module sdram_initialize
+
+Top level modules:
+	sdram_initialize
+
+} {} {}} C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone2/Assessment_3_top_module_tb/sdram_write.sv {1 {vlog -work work -sv -stats=none C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone2/Assessment_3_top_module_tb/sdram_write.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module sdram_write
+
+Top level modules:
+	sdram_write
+
+} {} {}} C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone2/Assessment_3_top_module_tb/sdram_read.sv {1 {vlog -work work -sv -stats=none C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone2/Assessment_3_top_module_tb/sdram_read.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module sdram_read
+
+Top level modules:
+	sdram_read
+
+} {} {}} C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone2/Assessment_3_top_module_tb/sdram_controller.sv {1 {vlog -work work -sv -stats=none C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone2/Assessment_3_top_module_tb/sdram_controller.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module sdram_controller
+
+Top level modules:
+	sdram_controller
+
+} {} {}}

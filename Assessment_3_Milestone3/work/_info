@@ -1,0 +1,154 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone2/Assessment_3_top_module_tb
+vmilestone3_tb
+Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z1 !s110 1727163136
+!i10b 1
+!s100 =0OG11JUm2Q4HadHTmM;H1
+IaS65ohJdaWPm[jFG;1H0m0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 !s105 milestone3_tb_sv_unit
+S1
+Z4 dC:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone3
+w1727163104
+Z5 8C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone3/milestone3_tb.sv
+Z6 FC:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone3/milestone3_tb.sv
+L0 2
+Z7 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z8 !s108 1727163136.000000
+Z9 !s107 C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone3/milestone3_tb.sv|
+Z10 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone3/milestone3_tb.sv|
+!i113 1
+Z11 o-work work -sv
+Z12 tCvgOpt 0
+vsdram_controller
+R0
+R1
+!i10b 1
+!s100 8Iz_?H[5Af4Ab=]zc6<Q@3
+Ik3Q_QcXOdYl:HYoT`6RoJ0
+R2
+!s105 sdram_controller_sv_unit
+S1
+R4
+w1727163133
+8C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone3/sdram_controller.sv
+FC:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone3/sdram_controller.sv
+L0 6
+R7
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone3/sdram_controller.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone3/sdram_controller.sv|
+!i113 1
+R11
+R12
+vsdram_controller_tb
+R0
+!s110 1727155319
+!i10b 1
+!s100 HOfcdAZ47j@B]`8T9bi970
+I`hHU1O>:Dc=:?ghRRDbL63
+R2
+R3
+S1
+R4
+w1727155245
+R5
+R6
+L0 2
+R7
+r1
+!s85 0
+31
+!s108 1727155319.000000
+R9
+R10
+!i113 1
+R11
+R12
+vsdram_initialize
+R0
+R1
+!i10b 1
+!s100 FBl<ZanhGd4Kh53gGTScE1
+IZa3:j3de_^>>0R?AaadkM1
+R2
+!s105 sdram_initialize_sv_unit
+S1
+R4
+w1727163079
+8C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone3/sdram_initialize.sv
+FC:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone3/sdram_initialize.sv
+L0 10
+R7
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone3/sdram_initialize.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone3/sdram_initialize.sv|
+!i113 1
+R11
+R12
+vsdram_read
+R0
+R1
+!i10b 1
+!s100 b[BC<AMg1P5Q;jgdDH>l@3
+IcmB:SX;fJGb?@35JW@7dQ0
+R2
+!s105 sdram_read_sv_unit
+S1
+R4
+w1727163097
+8C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone3/sdram_read.sv
+FC:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone3/sdram_read.sv
+L0 4
+R7
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone3/sdram_read.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone3/sdram_read.sv|
+!i113 1
+R11
+R12
+vsdram_write
+R0
+R1
+!i10b 1
+!s100 R6lEI>`1SdFWk<Oz?Wa@10
+IGS6JfNSlWYlcSEoKE=:h@0
+R2
+!s105 sdram_write_sv_unit
+S1
+R4
+w1727163087
+8C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone3/sdram_write.sv
+FC:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone3/sdram_write.sv
+L0 5
+R7
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone3/sdram_write.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3_chung/Assessment_3_Milestone3/sdram_write.sv|
+!i113 1
+R11
+R12
