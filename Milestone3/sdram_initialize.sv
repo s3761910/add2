@@ -8,70 +8,61 @@
 //  	Burst Length    -- 8 M[0-2]= 011;
 
 module sdram_initialize(	
-   input logic                       iclk,
-   input logic                       ireset,
-   input logic                       ireq,	//Request signal to initialize the memory
-   input logic                       ienb,	//Enable signal to start the initialization
-   output logic                      ofin,	//Acknowledgment signal to indicate to other modules, 
-													//when initialization is done
-    
-   output logic		          		DRAM_CLK,
-   output logic		          		DRAM_CKE,
-   output logic		    [12:0]		DRAM_ADDR,		
+	input logic                       iclk,
+	input logic                       ireset,
+	input logic                       ireq,	//Request signal to initialize the memory
+	input logic                 	  ienb,
+	//Enable signal to start the initialization
+	output logic                      ofin,	//Acknowledgment signal to indicate to other modules, 
+												//when initialization is done
+
+	output logic		          		DRAM_CLK,
+	output logic		          		DRAM_CKE,
+	output logic		    [12:0]		DRAM_ADDR,		
 	output logic		     [1:0]		DRAM_BA,	//bank select
 	output logic		          		DRAM_CAS_N,	//column access
 	output logic		          		DRAM_CS_N,	//chip select
 	output logic		          		DRAM_RAS_N,	//row access strobe 
 	output logic		          		DRAM_WE_N,	//write enable strobe
-   output logic		          		DRAM_LDQM, //CONTROL input buffer (write mode, low = active,) >< control output logic buffer (read mode, low = inactive)
-   output logic		          		DRAM_UDQM,	//
-   output logic 		    [15:0]		DRAM_DQ//store input data during write command (latched), print output data when read command (buffered)
+	output logic		          		DRAM_LDQM, //CONTROL input buffer (write mode, low = active,) >< control output logic buffer (read mode, low = inactive)
+	output logic		          		DRAM_UDQM,	//
+	output logic 		    [15:0]		DRAM_DQ,//store input data during write command (latched), print output data when read command (buffered)
 
-
-
+	output logic	idle_flag,
+	output logic	nop1_flag,
+	output logic	pre_flag,
+	output logic	ref_flag,
+	output logic	nop2_flag,
+	output logic	load_flag,
+	output logic	nop3_flag,
+	output logic	fin_flag,
+	output logic 	gpio_ref_cycles,
+	output logic 	gpio_init_begin_counter
 //	
-//	//////////// KEY //////////
-//	input 		     [1:0]		KEY,
-//
-//	//////////// LED //////////
-//	output		     [9:0]		LEDR,
-// 
-//	//////////// SW //////////
-//	input 		     [9:0]		SW,
-//	output [0:35]  GPIO
+// //	//////////// KEY //////////
+// input 		     [1:0]		KEY,
+// //
+// //	//////////// LED //////////
+// output		     [9:0]		LEDR,
+// // 
+// //	//////////// SW //////////
+// input 		     [9:0]		SW,
 );
-
 //=======================================================
 //  GPIOs declarations
 //=======================================================
-//	assign GPIO[0] = DRAM_CLK;
-//	assign GPIO[1] = DRAM_CKE;
-//	assign GPIO[2] = DRAM_LDQM;
-//	assign GPIO[3] = DRAM_UDQM;
-////	assign GPIO[4] = DRAM_ADDR;
-//	assign GPIO[5] = DRAM_BA;
-////	assign GPIO[6] = DRAM_DQ;
-//	assign GPIO[7] = KEY[0];
-//	assign GPIO[8] = KEY[1];
-//	assign GPIO[9] = SW[0];
-//	assign GPIO[10] = LEDR[0];
-//	assign GPIO[11] = SW[1];
-//	assign GPIO[12] = LEDR[1];
-//	assign GPIO[13] = DRAM_DQ[14];
-//	assign GPIO[14] = DRAM_DQ[15];
-//	assign GPIO[15:26] = DRAM_ADDR;
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
 	logic      [2:0]  next_state;
-	logic      [2:0]  state       ;	//State register
-	logic      [3:0]  command     ;		//Command register to be sent to SDRAM
-	logic     [12:0]  address     ;	//Address register
-	logic      [1:0]  bank        ;	//Bank register
-	logic      [1:0]  dqm         ;	//Masking registers for write mode making the input data buffer 
-	logic             ready       ;
-	logic     [15:0]  counter     ;
-	logic             ctr_reset   ;
+	logic      [2:0]  state       = 3'b000;	//State register
+	logic      [3:0]  command     = 4'h0;		//Command register to be sent to SDRAM
+	logic     [12:0]  address     = 13'h0;	//Address register
+	logic      [1:0]  bank        = 2'b00;	//Bank register
+	logic      [1:0]  dqm         = 2'b11;	//Masking registers for write mode making the input data buffer 
+	logic             ready       = 1'b0;
+	logic     [15:0]  counter     = 16'h0;
+	logic             ctr_reset   = 0;
 	logic	ref_cycles;
 	logic	init_begin_counter;
  
@@ -100,7 +91,7 @@ module sdram_initialize(
 	assign DRAM_CKE                                         = ienb ? 1'b1       : 1'bz;
 	assign DRAM_DQ                                          = ienb ? 16'h0000   : 16'bz;
 
-	always_ff @ (posedge iclk, posedge ctr_reset)
+	always_ff @(posedge iclk ,posedge ctr_reset)
 	begin
 		 if(ctr_reset)
 			  counter <=  16'h0;
@@ -109,11 +100,11 @@ module sdram_initialize(
 	end
 
 	//ref_cycles > 16 - refresh, nop - 8 times
-	assign ref_cycles = (counter >= 16);
-	assign init_begin_counter = (counter >= 16);
+	assign ref_cycles = (counter >= 15);
+	assign init_begin_counter = (counter >= 10000);
 
 	//State Transition 
-	always_ff @ (posedge iclk)
+	always_ff @(posedge iclk)
 	begin
 		if(ireset)
 			state <=  IDLE;
@@ -158,15 +149,33 @@ module sdram_initialize(
 	end
 
 	//Output computation 
-	always_comb	begin
+	always_comb begin
+		idle_flag = 1;
+		nop1_flag = 1;
+		pre_flag = 1;
+		ref_flag = 1;
+		nop2_flag = 1;
+		load_flag = 1;
+		nop3_flag = 1;
+		fin_flag = 1;
+		gpio_ref_cycles = 1;
+		gpio_init_begin_counter = 1;
 		case(state)
+			default:
+				begin
+					command             =  CMD_NOP;
+					address             =  13'b0000000000000;   
+					bank                =  2'b00;
+					ready               =  1'b0;
+					ctr_reset           =  1'b1;
+				end
 			IDLE:
 			begin            
 				command             =  CMD_NOP;
 				address             =  13'b0000000000000;   
 				bank                =  2'b00;
 				ready               =  1'b0;
-				
+				idle_flag			= 1'b1;
 				ctr_reset           =  1'b1;
 			end
 			INIT_NOP1:
@@ -175,7 +184,7 @@ module sdram_initialize(
 				address             =  13'b0000000000000;   
 				bank                =  2'b00;
 				ready               =  1'b0;
-				
+				nop1_flag			= 1'b1;
 				ctr_reset           =  1'b0;
 			end
 			INIT_PRE:
@@ -184,7 +193,7 @@ module sdram_initialize(
 				address             =  13'b0010000000000;   
 				bank                =  2'b11;					//All banks
 				ready               =  1'b0;
-				
+				pre_flag			= 1'b1;
 				ctr_reset           =  1'b1;						//Reset the counter
 			end
 			INIT_REF:
@@ -193,7 +202,7 @@ module sdram_initialize(
 				address             =  13'b0000000000000;   
 				bank                =  2'b00;
 				ready               =  1'b0;
-				
+				ref_flag			= 1'b1;
 				ctr_reset           =  1'b0;
 			end
 			INIT_NOP2:
@@ -202,7 +211,7 @@ module sdram_initialize(
 				address             =  13'b0000000000000;   
 				bank                =  2'b00;
 				ready               =  1'b0;
-			   
+			   	nop2_flag			= 1'b1;
 				ctr_reset           =  1'b0; 
 			end
 			INIT_LOAD:
@@ -211,7 +220,7 @@ module sdram_initialize(
 				bank                =  2'b00;    
 				address             =  13'b0000000100011;
 				ready               =  1'b0;
-				
+				load_flag			= 1'b1;
 				ctr_reset           =  1'b0;
 			end
 			INIT_NOP3:
@@ -220,7 +229,7 @@ module sdram_initialize(
 				bank                =  2'b00;    
 				address             =  13'b0000000000000; 
 				ready               =  1'b0;
-				
+				nop3_flag			= 1'b1;
 				ctr_reset           =  1'b0;
 			end
 			INIT_FIN:
@@ -229,7 +238,7 @@ module sdram_initialize(
 				bank                =  2'b00;    
 				address             =  13'b0000000000000; 
 				ready               =  1'b1;
-				
+				fin_flag			= 1'b1;
 				ctr_reset           =  1'b0;
 			end
 		endcase

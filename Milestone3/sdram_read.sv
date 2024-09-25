@@ -135,6 +135,7 @@ module sdram_read(
 
 	//Output computation 
 	always_comb	begin
+		data                =  DRAM_DQ;
 		case(state)
 			//IDLE
 			IDLE:
@@ -144,7 +145,6 @@ module sdram_read(
 				bank                =  2'b00;
 				dqm                 =  2'b11;
 				ready               =  1'b0;
-				data				= 0;
 				
 				ctr_reset           =  1'b0;
 			end
@@ -156,7 +156,6 @@ module sdram_read(
 				bank                =  ibank;
 				dqm                 =  2'b11;
 				ready               =  1'b0;
-				data				= 0;
 				
 				ctr_reset           =  1'b0;
 			end
@@ -168,7 +167,6 @@ module sdram_read(
 				bank                =  2'b00;
 				dqm                 =  2'b11;
 				ready               =  1'b0;
-				data				= 0;
 				
 				ctr_reset           =  1'b0;
 			end
@@ -180,7 +178,6 @@ module sdram_read(
 				bank                =  ibank;
 				dqm                 =  2'b11;
 				ready               =  1'b0;
-				data				= 0;
 				
 				ctr_reset           =  1'b0;
 			end
@@ -192,7 +189,6 @@ module sdram_read(
 				bank                =  2'b00;
 				dqm                 =  2'b00;
 				ready               =  1'b0;
-				data				= 0;
 				
 				ctr_reset           =  1'b0;
 			end
@@ -204,7 +200,6 @@ module sdram_read(
 				bank                =  2'b00;
 				dqm                 =  2'b00;
 				ready               =  1'b0;
-				data				= 0;
 				
 				ctr_reset           =  1'b1;						//Reset counter and start to count the byte to read
 			end
@@ -229,7 +224,6 @@ module sdram_read(
 				bank                =  2'b00;
 				dqm                 =  2'b11;
 				ready               =  1'b1;						//Read is complete
-				data				= 0;
 				
 				ctr_reset           =  1'b0;
 			end

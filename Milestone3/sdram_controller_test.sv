@@ -23,6 +23,20 @@ module sdram_controller_test(
 	output logic		          		DRAM_UDQM,
 	output logic		          		DRAM_WE_N,
 	output	logic		[31:0] 			GPIO,
+	output logic 				[15:0] 		dq_read,
+	output logic 				[15:0] 		dq_write,
+	output logic 				[15:0] 		dq_init,
+
+	output logic	idle_flag,
+	output logic	nop1_flag,
+	output logic	pre_flag,
+	output logic	ref_flag,
+	output logic	nop2_flag,
+	output logic	load_flag,
+	output logic	nop3_flag,
+	output logic	fin_flag,
+	output logic 	gpio_ref_cycles,
+	output logic 	gpio_init_begin_counter,
 	//////////// KEY //////////
 	input logic 		     [2:0]		KEY,
 
@@ -41,20 +55,17 @@ module sdram_controller_test(
 	logic   	[127:0]		data;
 	logic     	[2:0]   		state;
 	logic     	[2:0]   		next_state;
-
-	logic   	[21:0]  		address         ;
+	logic   	[21:0]  		address;
 	logic            		reset;
-
 	logic            		write_command;
 	logic            		read_command;
 	logic            		write_finished;
 	logic            		read_finished;
 	logic  	[127:0] 		write_data;
 	logic  	[127:0]		 read_data;
-
 	logic             		write_request;
 	logic            		read_request;
-	
+	logic firs_t;
 
 // STATES - State
 	parameter INIT      = 3'b000;
@@ -69,7 +80,7 @@ module sdram_controller_test(
 	assign  write_data      = {112'b0, SW[7:0]};
 	assign  address      	= {22'b0, SW[9:8]};
 
-	assign  LEDR            = data[9:0];
+	assign  LEDR   = data[9:0];
 	assign GPIO[0] = CLOCK_50;
 	assign GPIO[1] = state[0];
 	assign GPIO[2] = state[1];
@@ -80,19 +91,19 @@ module sdram_controller_test(
 	assign GPIO[7] = read_request;
 	assign GPIO[8] = reset;
 	assign GPIO[9] = DRAM_CLK;
-	// assign GPIO[10] = CLOCK_50;
-	// assign GPIO[11] = CLOCK_50;
-	// assign GPIO[12] = CLOCK_50;
-	// assign GPIO[13] = CLOCK_50;
-	// assign GPIO[14] = CLOCK_50;
-	// assign GPIO[15] = CLOCK_50;
-	// assign GPIO[16] = CLOCK_50;
-	// assign GPIO[17] = CLOCK_50;
-	// assign GPIO[18] = CLOCK_50;
-	// assign GPIO[19] = CLOCK_50;
-	// assign GPIO[20] = CLOCK_50;
-	// assign GPIO[21] = CLOCK_50;
-	// assign GPIO[22] = CLOCK_50;
+	assign GPIO[10] = idle_flag;
+	assign GPIO[11] = nop1_flag;
+	assign GPIO[12] = pre_flag;
+	assign GPIO[13] = ref_flag;
+	assign GPIO[14] = nop2_flag;
+	assign GPIO[15] = load_flag;
+	assign GPIO[16] = nop3_flag;
+	assign GPIO[17] = fin_flag;
+	assign GPIO[18] = gpio_ref_cycles;
+	assign GPIO[19] = gpio_init_begin_counter;
+	assign GPIO[20] = KEY[0];
+	assign GPIO[21] = KEY[1];
+	// assign GPIO[22] = ;
 	// assign GPIO[23] = CLOCK_50;
 	// assign GPIO[24] = CLOCK_50;
 	// assign GPIO[25] = CLOCK_50;
@@ -111,6 +122,9 @@ module sdram_controller_test(
 	always_ff @(posedge CLOCK_50)
 	begin
 		state <=  next_state;
+		// if (firs_t & state == IDLE) begin
+		// 	data            =  read_data;
+		// end
 	end
 
 	//Next state computation FSM
@@ -147,43 +161,36 @@ module sdram_controller_test(
 	
 	//Output logic computation for the FSM
 	always_comb begin
+		data            =  read_data;
+		write_request   =  1'b0;
+		read_request    =  1'b0;
 		case(state)
 			INIT:
 			begin
 				write_request   =  1'b0;
 				read_request    =  1'b0;
-				data            =  0;
 			end
-			
 			WRIT_START:
 			begin
 				write_request   =  1'b1;
 				read_request    =  1'b0;
-				data            =  0;
 			end
 			WRIT_FIN:
 			begin
 				write_request   =  1'b0;
 				read_request    =  1'b0;
-				data            =  0;
 			end
 			
 			READ_START:
 			begin
 				write_request   =  1'b0;
 				read_request    =  1'b1;
-				data            =  0;
 			end
 			READ_FIN:
 			begin
 				write_request   =  1'b0;
 				read_request    =  1'b0;
 				data            =  read_data;
-			end
-			default: begin
-				write_request   =  1'b1;
-				read_request    =  1'b1;
-				data = 324;
 			end
 		endcase
 	end
@@ -210,7 +217,9 @@ module sdram_controller_test(
 		.DRAM_CKE(DRAM_CKE),
 		.DRAM_CLK(DRAM_CLK),
 		.DRAM_CS_N(DRAM_CS_N),
-		//.DRAM_DQ(DRAM_DQ),
+		.dq_read(dq_read),
+		.dq_write(dq_write),
+		.dq_init(dq_init),
 		.DRAM_LDQM(DRAM_LDQM),
 		.DRAM_RAS_N(DRAM_RAS_N),
 		.DRAM_UDQM(DRAM_UDQM),

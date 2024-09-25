@@ -27,7 +27,7 @@ module sdram_controller_tb();
     // logic [15:0] dq;
     // assign dq = DRAM_DQ;
 
-    sdram_controller U2(.*);
+    sdram_controller_test U2(.*);
 
 	parameter CLK_FREQ = 200;
 	parameter HALF_CLK_FREQ = 100;

@@ -25,31 +25,45 @@ module sdram_controller(
 	output logic		          		DRAM_CLK,
 	output logic		          		DRAM_CS_N,
 	// inout logic	  		    [15:0]		DRAM_DQ,
+	output logic 				[15:0] 		dq_read,
+	output logic 				[15:0] 		dq_write,
+	output logic 				[15:0] 		dq_init,
 	output logic		          		DRAM_LDQM,
 	output logic		          		DRAM_RAS_N,
 	output logic		          		DRAM_UDQM,
-	output logic		          		DRAM_WE_N
+	output logic		          		DRAM_WE_N,
+
+	output logic	idle_flag,
+	output logic	nop1_flag,
+	output logic	pre_flag,
+	output logic	ref_flag,
+	output logic	nop2_flag,
+	output logic	load_flag,
+	output logic	nop3_flag,
+	output logic	fin_flag,
+	output logic 	gpio_ref_cycles,
+	output logic 	gpio_init_begin_counter
 );
 
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
-	logic      [3:0]  state;
-	logic      [3:0]  next_state;
-	logic      [2:0]  mul_state;
+	logic      [3:0]  state       ;
+	logic      [3:0]  next_state  ;
+	logic      [2:0]  mul_state   ;
 
-	logic             read_ack;
-	logic             write_ack;
+	logic             read_ack    ;
+	logic             write_ack   ;
 
 	//Next opperation priority - 0  1              next_prior 
 
 	//SDRAM INITLIZE MODULE
-	logic            init_ireq;
+	logic            init_ireq   ;
 	logic            init_ienb;
 	logic            init_fin;
-	logic 			 next_prior;
+	logic 				next_prior;
 	//SDRAM WRITE MODULE
-	logic            write_ireq;
+	logic            write_ireq  ;
 	logic            write_ienb;
 	logic    [12:0]  write_irow;
 	logic     [9:0]  write_icolumn;
@@ -57,30 +71,16 @@ module sdram_controller(
 	logic            write_fin;
 
 	//SDRAM READ MODULE
-	logic             read_ireq;
+	logic             read_ireq   ;
 	logic            read_ienb;
 	logic    [12:0]  read_irow;
 	logic     [9:0]  read_icolumn;
 	logic     [1:0]  read_ibank;
 	logic            read_fin;
 
-logic 				[15:0] 		dq_read;
-logic 				[15:0] 		dq_write;
-logic 				[15:0] 		dq_init;
-
-// logic 				[63:0]		sdram;
-// logic 				[15:0] 		dq_middle;
 // logic	  		    [15:0]		DRAM_DQ;
-// assign dq_read = iread_req? DRAM_DQ:'z;
-assign dq_read = dq_write;
-
-
-
-// always_comb begin 
-// 	if (iread_req) begin
-
-// 	end
-// end
+assign dq_read = iread_req? dq_write:dq_read;
+// assign dq_read = dq_write;
 
 // STATES - State
 parameter 			INIT_START      = 4'b0000;
@@ -98,8 +98,6 @@ parameter 			INIT = 3'b001;
 parameter			WRIT = 3'b010;
 parameter           READ = 3'b100;			  
 			  			  
-
-	
 //=======================================================
 //  Structural coding
 //=======================================================
@@ -125,16 +123,16 @@ parameter           READ = 3'b100;
 	always_comb	begin
 		case(state)
 			//Init States
-			INIT_START:									// Start initiliasation
+			INIT_START:									//Start initiliasation
 				next_state      = INIT_FIN;
-			INIT_FIN:									// End initiliasation
+			INIT_FIN:									//End initiliasation
 				if(init_fin)
 					next_state  = IDLE;
 				else
 					next_state  = INIT_FIN;
 					
 			//Idle State
-			IDLE:										// Idle to wait for read or write
+			IDLE:											//Idle to wait for read or write
 				if(next_prior)
 				begin
 					if(iread_req)
@@ -181,8 +179,20 @@ parameter           READ = 3'b100;
 	end
 
 	// Output computation
-	always_comb begin
+	always_comb	begin
 		case(state)
+			default: begin
+				
+				init_ireq       = 1'b1;
+				write_ireq      = 1'b0;
+				read_ireq       = 1'b0;
+				
+				write_ack       = 1'b0;
+				read_ack        = 1'b0;
+				
+				mul_state       = INIT;
+				next_prior      = 1'b0;
+			end
 			//Init States
 			INIT_START:
 			begin            
@@ -323,7 +333,17 @@ parameter           READ = 3'b100;
 		.DRAM_LDQM(DRAM_LDQM),
 		.DRAM_RAS_N(DRAM_RAS_N),
 		.DRAM_UDQM(DRAM_UDQM),
-		.DRAM_WE_N(DRAM_WE_N)
+		.DRAM_WE_N(DRAM_WE_N),
+		.idle_flag(idle_flag),
+		.nop1_flag(nop1_flag),
+		.pre_flag(pre_flag),
+		.ref_flag(ref_flag),
+		.nop2_flag(nop2_flag),
+		.load_flag(load_flag),
+		.nop3_flag(nop3_flag),
+		.fin_flag(fin_flag),
+		.gpio_ref_cycles(gpio_ref_cycles),
+		.gpio_init_begin_counter(gpio_init_begin_counter)
 	);
 
 	sdram_write sdram_write (
