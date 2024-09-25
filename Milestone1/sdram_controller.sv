@@ -77,6 +77,7 @@ module sdram_controller(
 	logic     [9:0]  read_icolumn;
 	logic     [1:0]  read_ibank;
 	logic            read_fin;
+	// logic firs_t;
 
 // logic	  		    [15:0]		DRAM_DQ;
 assign dq_read = iread_req? dq_write:dq_read;
@@ -113,14 +114,17 @@ parameter           READ = 3'b100;
 	//State Transition
 	always_ff @(posedge iclk)
 	begin
-		if(ireset == 1'b1)
+		if(ireset == 1'b1) begin
 			state <=  INIT_START;
-		else
+		end
+		else begin
 			state <=  next_state;
+		end
 	end
 
 	//Next state computation
 	always_comb	begin
+		// firs_t = 1;
 		case(state)
 			//Init States
 			INIT_START:									//Start initiliasation
@@ -132,25 +136,30 @@ parameter           READ = 3'b100;
 					next_state  = INIT_FIN;
 					
 			//Idle State
-			IDLE:											//Idle to wait for read or write
-				if(next_prior)
+			IDLE:		
 				begin
-					if(iread_req)
-						next_state  = READ_START;
-					else if(iwrite_req)
-						next_state  = WRIT_START;
+					// if (firs_t) begin
+					// 	firs_t = 0;
+					// end
+					if(next_prior)
+					begin
+						if(iread_req)
+							next_state  = READ_START;
+						else if(iwrite_req)
+							next_state  = WRIT_START;
+						else
+							next_state  = IDLE;
+					end
 					else
-						next_state  = IDLE;
-				end
-				else
-				begin
-					if(iwrite_req)
-						next_state  = WRIT_START;
-					else if(iread_req)
-						next_state  = READ_START;
-					else
-						next_state  = IDLE;
-				end
+					begin
+						if(iwrite_req)
+							next_state  = WRIT_START;
+						else if(iread_req)
+							next_state  = READ_START;
+						else
+							next_state  = IDLE;
+					end
+				end									//Idle to wait for read or write
 			
 			//Write States
 			WRIT_START:									//Start to write

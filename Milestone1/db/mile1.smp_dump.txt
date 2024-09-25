@@ -33,8 +33,8 @@ state.WRIT_NOP2 0 1 0 0 0 0 1
 state.WRIT_FIN 1 0 0 0 0 0 1 
 
 State Machine - |sdram_controller_test|sdram_controller:u0|sdram_initialize:sdram_init|state
-Name state.INIT_FIN state.INIT_NOP3 state.INIT_LOAD state.INIT_NOP2 state.INIT_REF state.INIT_PRE state.INIT_NOP1 state.000 
-state.000 0 0 0 0 0 0 0 0 
+Name state.INIT_FIN state.INIT_NOP3 state.INIT_LOAD state.INIT_NOP2 state.INIT_REF state.INIT_PRE state.INIT_NOP1 state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 0 
 state.INIT_NOP1 0 0 0 0 0 0 1 1 
 state.INIT_PRE 0 0 0 0 0 1 0 1 
 state.INIT_REF 0 0 0 0 1 0 0 1 

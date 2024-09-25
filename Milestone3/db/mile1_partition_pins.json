@@ -112,10 +112,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "GPIO[4]",
-					"strict" : false
-				},
-				{
 					"name" : "GPIO[5]",
 					"strict" : false
 				},

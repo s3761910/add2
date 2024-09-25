@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Wed Sep 25 12:12:49 2024
+Analysis & Synthesis Status : Successful - Wed Sep 25 14:52:24 2024
 Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 Revision Name : mile1
 Top-level Entity Name : sdram_controller_test
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 82
+Total registers : 62
 Total pins : 137
 Total virtual pins : 0
 Total block memory bits : 0

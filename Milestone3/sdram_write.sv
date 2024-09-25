@@ -79,12 +79,15 @@ parameter           WRIT_FIN = 3'b110;
 	//State Transition 
 	always_ff @(posedge iclk)
 	begin
-		if(ireset)
+		if(ireset) begin
+			i = 0;
 			state <=  3'b000;
+		end
 		else
 			state <=  next_state;
 	end
 
+	logic i;
 	//Next state computation 
 	always_comb begin
 		case(state)
@@ -99,7 +102,12 @@ parameter           WRIT_FIN = 3'b110;
 				next_state       = WRIT_NOP1;
 			//NOP
 			WRIT_NOP1:
-				next_state       = WRIT_WRITE;
+					if (i >= 2) begin
+						next_state       = WRIT_WRITE;
+						i = 0;
+					end else begin
+						next_state		= WRIT_NOP1;
+					end
 			//WRITE
 			WRIT_WRITE:
 					next_state   = WRIT_WRITING;                
@@ -111,7 +119,12 @@ parameter           WRIT_FIN = 3'b110;
 					next_state   = WRIT_WRITING;
 			//NOP
 			WRIT_NOP2:
-				next_state       = WRIT_FIN;
+				if (i >= 2) begin
+					next_state       = WRIT_WRITE;
+					i = 0;
+				end else begin
+					next_state		= WRIT_NOP1;
+				end
 			//NOP - FIN
 			WRIT_FIN:
 				next_state       = IDLE;

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for mile1
-Wed Sep 25 12:12:49 2024
+Wed Sep 25 14:33:01 2024
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -58,7 +58,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Sep 25 12:12:49 2024       ;
+; Analysis & Synthesis Status     ; Successful - Wed Sep 25 14:33:01 2024       ;
 ; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                   ; mile1                                       ;
 ; Top-level Entity Name           ; sdram_controller_test                       ;
@@ -200,14 +200,14 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 66             ;
+; Estimate of Logic utilization (ALMs needed) ; 65             ;
 ;                                             ;                ;
 ; Combinational ALUT usage for logic          ; 111            ;
 ;     -- 7 input functions                    ; 2              ;
-;     -- 6 input functions                    ; 16             ;
+;     -- 6 input functions                    ; 14             ;
 ;     -- 5 input functions                    ; 9              ;
-;     -- 4 input functions                    ; 8              ;
-;     -- <=3 input functions                  ; 76             ;
+;     -- 4 input functions                    ; 9              ;
+;     -- <=3 input functions                  ; 77             ;
 ;                                             ;                ;
 ; Dedicated logic registers                   ; 82             ;
 ;                                             ;                ;
@@ -217,8 +217,8 @@ refer to the applicable agreement for further details.
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 84             ;
-; Total fan-out                               ; 799            ;
-; Average fan-out                             ; 1.71           ;
+; Total fan-out                               ; 794            ;
+; Average fan-out                             ; 1.70           ;
 +---------------------------------------------+----------------+
 
 
@@ -227,8 +227,8 @@ refer to the applicable agreement for further details.
 +-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------+-----------------------+--------------+
 ; Compilation Hierarchy Node          ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                    ; Entity Name           ; Library Name ;
 +-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------+-----------------------+--------------+
-; |sdram_controller_test              ; 111 (6)             ; 82 (3)                    ; 0                 ; 0          ; 137  ; 0            ; |sdram_controller_test                                                 ; sdram_controller_test ; work         ;
-;    |sdram_controller:u0|            ; 105 (20)            ; 79 (9)                    ; 0                 ; 0          ; 0    ; 0            ; |sdram_controller_test|sdram_controller:u0                             ; sdram_controller      ; work         ;
+; |sdram_controller_test              ; 111 (5)             ; 82 (3)                    ; 0                 ; 0          ; 137  ; 0            ; |sdram_controller_test                                                 ; sdram_controller_test ; work         ;
+;    |sdram_controller:u0|            ; 106 (21)            ; 79 (9)                    ; 0                 ; 0          ; 0    ; 0            ; |sdram_controller_test|sdram_controller:u0                             ; sdram_controller      ; work         ;
 ;       |sdram_initialize:sdram_init| ; 43 (43)             ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |sdram_controller_test|sdram_controller:u0|sdram_initialize:sdram_init ; sdram_initialize      ; work         ;
 ;       |sdram_read:sdram_read|       ; 18 (18)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |sdram_controller_test|sdram_controller:u0|sdram_read:sdram_read       ; sdram_read            ; work         ;
 ;       |sdram_write:sdram_write|     ; 24 (24)             ; 30 (30)                   ; 0                 ; 0          ; 0    ; 0            ; |sdram_controller_test|sdram_controller:u0|sdram_write:sdram_write     ; sdram_write           ; work         ;
@@ -288,20 +288,20 @@ Encoding Type:  One-Hot
 
 
 Encoding Type:  One-Hot
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |sdram_controller_test|sdram_controller:u0|sdram_initialize:sdram_init|state                                                           ;
-+-----------------+----------------+-----------------+-----------------+-----------------+----------------+----------------+-----------------+-----------+
-; Name            ; state.INIT_FIN ; state.INIT_NOP3 ; state.INIT_LOAD ; state.INIT_NOP2 ; state.INIT_REF ; state.INIT_PRE ; state.INIT_NOP1 ; state.000 ;
-+-----------------+----------------+-----------------+-----------------+-----------------+----------------+----------------+-----------------+-----------+
-; state.000       ; 0              ; 0               ; 0               ; 0               ; 0              ; 0              ; 0               ; 0         ;
-; state.INIT_NOP1 ; 0              ; 0               ; 0               ; 0               ; 0              ; 0              ; 1               ; 1         ;
-; state.INIT_PRE  ; 0              ; 0               ; 0               ; 0               ; 0              ; 1              ; 0               ; 1         ;
-; state.INIT_REF  ; 0              ; 0               ; 0               ; 0               ; 1              ; 0              ; 0               ; 1         ;
-; state.INIT_NOP2 ; 0              ; 0               ; 0               ; 1               ; 0              ; 0              ; 0               ; 1         ;
-; state.INIT_LOAD ; 0              ; 0               ; 1               ; 0               ; 0              ; 0              ; 0               ; 1         ;
-; state.INIT_NOP3 ; 0              ; 1               ; 0               ; 0               ; 0              ; 0              ; 0               ; 1         ;
-; state.INIT_FIN  ; 1              ; 0               ; 0               ; 0               ; 0              ; 0              ; 0               ; 1         ;
-+-----------------+----------------+-----------------+-----------------+-----------------+----------------+----------------+-----------------+-----------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |sdram_controller_test|sdram_controller:u0|sdram_initialize:sdram_init|state                                                            ;
++-----------------+----------------+-----------------+-----------------+-----------------+----------------+----------------+-----------------+------------+
+; Name            ; state.INIT_FIN ; state.INIT_NOP3 ; state.INIT_LOAD ; state.INIT_NOP2 ; state.INIT_REF ; state.INIT_PRE ; state.INIT_NOP1 ; state.IDLE ;
++-----------------+----------------+-----------------+-----------------+-----------------+----------------+----------------+-----------------+------------+
+; state.IDLE      ; 0              ; 0               ; 0               ; 0               ; 0              ; 0              ; 0               ; 0          ;
+; state.INIT_NOP1 ; 0              ; 0               ; 0               ; 0               ; 0              ; 0              ; 1               ; 1          ;
+; state.INIT_PRE  ; 0              ; 0               ; 0               ; 0               ; 0              ; 1              ; 0               ; 1          ;
+; state.INIT_REF  ; 0              ; 0               ; 0               ; 0               ; 1              ; 0              ; 0               ; 1          ;
+; state.INIT_NOP2 ; 0              ; 0               ; 0               ; 1               ; 0              ; 0              ; 0               ; 1          ;
+; state.INIT_LOAD ; 0              ; 0               ; 1               ; 0               ; 0              ; 0              ; 0               ; 1          ;
+; state.INIT_NOP3 ; 0              ; 1               ; 0               ; 0               ; 0              ; 0              ; 0               ; 1          ;
+; state.INIT_FIN  ; 1              ; 0               ; 0               ; 0               ; 0              ; 0              ; 0               ; 1          ;
++-----------------+----------------+-----------------+-----------------+-----------------+----------------+----------------+-----------------+------------+
 
 
 +---------------------------------------------------------------------------------------------------+
@@ -309,14 +309,14 @@ Encoding Type:  One-Hot
 +----------------------------------------------------+---------------------+------------------------+
 ; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
 +----------------------------------------------------+---------------------+------------------------+
-; sdram_controller:u0|dq_read[0]                     ; Decoder0            ; yes                    ;
-; sdram_controller:u0|dq_read[1]                     ; Decoder0            ; yes                    ;
-; sdram_controller:u0|dq_read[2]                     ; Decoder0            ; yes                    ;
-; sdram_controller:u0|dq_read[3]                     ; Decoder0            ; yes                    ;
-; sdram_controller:u0|dq_read[4]                     ; Decoder0            ; yes                    ;
-; sdram_controller:u0|dq_read[5]                     ; Decoder0            ; yes                    ;
-; sdram_controller:u0|dq_read[6]                     ; Decoder0            ; yes                    ;
-; sdram_controller:u0|dq_read[7]                     ; Decoder0            ; yes                    ;
+; sdram_controller:u0|dq_read[0]                     ; WideOr1             ; yes                    ;
+; sdram_controller:u0|dq_read[1]                     ; WideOr1             ; yes                    ;
+; sdram_controller:u0|dq_read[2]                     ; WideOr1             ; yes                    ;
+; sdram_controller:u0|dq_read[3]                     ; WideOr1             ; yes                    ;
+; sdram_controller:u0|dq_read[4]                     ; WideOr1             ; yes                    ;
+; sdram_controller:u0|dq_read[5]                     ; WideOr1             ; yes                    ;
+; sdram_controller:u0|dq_read[6]                     ; WideOr1             ; yes                    ;
+; sdram_controller:u0|dq_read[7]                     ; WideOr1             ; yes                    ;
 ; Number of user-specified and inferred latches = 8  ;                     ;                        ;
 +----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
@@ -364,14 +364,13 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
-; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; Yes        ; |sdram_controller_test|state[1]                  ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |sdram_controller_test|sdram_controller:u0|state ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; Yes        ; |sdram_controller_test|state[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
 
 
 +---------------------------------------------------------------------------------------+
@@ -530,14 +529,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 5                           ;
 ;         2 data inputs ; 20                          ;
-;         3 data inputs ; 23                          ;
-;         4 data inputs ; 8                           ;
+;         3 data inputs ; 24                          ;
+;         4 data inputs ; 9                           ;
 ;         5 data inputs ; 9                           ;
-;         6 data inputs ; 16                          ;
+;         6 data inputs ; 14                          ;
 ; boundary_port         ; 137                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.36                        ;
+; Average LUT depth     ; 1.37                        ;
 +-----------------------+-----------------------------+
 
 
@@ -556,7 +555,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Wed Sep 25 12:12:42 2024
+    Info: Processing started: Wed Sep 25 14:32:52 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mile1 -c mile1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -572,7 +571,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file sdram_c
     Info (12023): Found entity 1: sdram_controller File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 6
 Info (12127): Elaborating entity "sdram_controller_test" for the top level hierarchy
 Warning (10230): Verilog HDL assignment warning at sdram_controller_test.sv(81): truncated value with size 24 to match size of target (22) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller_test.sv Line: 81
-Warning (10270): Verilog HDL Case Statement warning at sdram_controller_test.sv(167): incomplete case statement has no default case item File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller_test.sv Line: 167
 Warning (10030): Net "idle_flag" at sdram_controller_test.sv(30) has no driver or initial value, using a default initial value '0' File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller_test.sv Line: 30
 Warning (10030): Net "nop1_flag" at sdram_controller_test.sv(31) has no driver or initial value, using a default initial value '0' File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller_test.sv Line: 31
 Warning (10030): Net "pre_flag" at sdram_controller_test.sv(32) has no driver or initial value, using a default initial value '0' File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller_test.sv Line: 32
@@ -584,26 +582,28 @@ Warning (10030): Net "fin_flag" at sdram_controller_test.sv(37) has no driver or
 Warning (10030): Net "gpio_ref_cycles" at sdram_controller_test.sv(38) has no driver or initial value, using a default initial value '0' File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller_test.sv Line: 38
 Warning (10030): Net "gpio_init_begin_counter" at sdram_controller_test.sv(39) has no driver or initial value, using a default initial value '0' File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller_test.sv Line: 39
 Warning (10034): Output port "GPIO[31..22]" at sdram_controller_test.sv(25) has no driver File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller_test.sv Line: 25
-Info (12128): Elaborating entity "sdram_controller" for hierarchy "sdram_controller:u0" File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller_test.sv Line: 227
-Info (10041): Inferred latch for "dq_read[0]" at sdram_controller.sv(82) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 82
-Info (10041): Inferred latch for "dq_read[1]" at sdram_controller.sv(82) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 82
-Info (10041): Inferred latch for "dq_read[2]" at sdram_controller.sv(82) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 82
-Info (10041): Inferred latch for "dq_read[3]" at sdram_controller.sv(82) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 82
-Info (10041): Inferred latch for "dq_read[4]" at sdram_controller.sv(82) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 82
-Info (10041): Inferred latch for "dq_read[5]" at sdram_controller.sv(82) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 82
-Info (10041): Inferred latch for "dq_read[6]" at sdram_controller.sv(82) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 82
-Info (10041): Inferred latch for "dq_read[7]" at sdram_controller.sv(82) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 82
-Info (10041): Inferred latch for "dq_read[8]" at sdram_controller.sv(82) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 82
-Info (10041): Inferred latch for "dq_read[9]" at sdram_controller.sv(82) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 82
-Info (10041): Inferred latch for "dq_read[10]" at sdram_controller.sv(82) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 82
-Info (10041): Inferred latch for "dq_read[11]" at sdram_controller.sv(82) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 82
-Info (10041): Inferred latch for "dq_read[12]" at sdram_controller.sv(82) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 82
-Info (10041): Inferred latch for "dq_read[13]" at sdram_controller.sv(82) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 82
-Info (10041): Inferred latch for "dq_read[14]" at sdram_controller.sv(82) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 82
-Info (10041): Inferred latch for "dq_read[15]" at sdram_controller.sv(82) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 82
-Info (12128): Elaborating entity "sdram_initialize" for hierarchy "sdram_controller:u0|sdram_initialize:sdram_init" File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 347
-Info (12128): Elaborating entity "sdram_write" for hierarchy "sdram_controller:u0|sdram_write:sdram_write" File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 373
-Info (12128): Elaborating entity "sdram_read" for hierarchy "sdram_controller:u0|sdram_read:sdram_read" File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 399
+Info (12128): Elaborating entity "sdram_controller" for hierarchy "sdram_controller:u0" File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller_test.sv Line: 230
+Info (10041): Inferred latch for "dq_read[0]" at sdram_controller.sv(83) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 83
+Info (10041): Inferred latch for "dq_read[1]" at sdram_controller.sv(83) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 83
+Info (10041): Inferred latch for "dq_read[2]" at sdram_controller.sv(83) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 83
+Info (10041): Inferred latch for "dq_read[3]" at sdram_controller.sv(83) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 83
+Info (10041): Inferred latch for "dq_read[4]" at sdram_controller.sv(83) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 83
+Info (10041): Inferred latch for "dq_read[5]" at sdram_controller.sv(83) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 83
+Info (10041): Inferred latch for "dq_read[6]" at sdram_controller.sv(83) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 83
+Info (10041): Inferred latch for "dq_read[7]" at sdram_controller.sv(83) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 83
+Info (10041): Inferred latch for "dq_read[8]" at sdram_controller.sv(83) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 83
+Info (10041): Inferred latch for "dq_read[9]" at sdram_controller.sv(83) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 83
+Info (10041): Inferred latch for "dq_read[10]" at sdram_controller.sv(83) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 83
+Info (10041): Inferred latch for "dq_read[11]" at sdram_controller.sv(83) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 83
+Info (10041): Inferred latch for "dq_read[12]" at sdram_controller.sv(83) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 83
+Info (10041): Inferred latch for "dq_read[13]" at sdram_controller.sv(83) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 83
+Info (10041): Inferred latch for "dq_read[14]" at sdram_controller.sv(83) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 83
+Info (10041): Inferred latch for "dq_read[15]" at sdram_controller.sv(83) File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 83
+Info (12128): Elaborating entity "sdram_initialize" for hierarchy "sdram_controller:u0|sdram_initialize:sdram_init" File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 356
+Warning (10858): Verilog HDL warning at sdram_initialize.sv(62): object dqm used but never assigned File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_initialize.sv Line: 62
+Warning (10030): Net "dqm" at sdram_initialize.sv(62) has no driver or initial value, using a default initial value '0' File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_initialize.sv Line: 62
+Info (12128): Elaborating entity "sdram_write" for hierarchy "sdram_controller:u0|sdram_write:sdram_write" File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 382
+Info (12128): Elaborating entity "sdram_read" for hierarchy "sdram_controller:u0|sdram_read:sdram_read" File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller.sv Line: 408
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "GPIO[10]" is stuck at GND File: C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone1/sdram_controller_test.sv Line: 25
@@ -713,11 +713,11 @@ Info (21057): Implemented 259 device resources after synthesis - the final resou
     Info (21058): Implemented 14 input pins
     Info (21059): Implemented 123 output pins
     Info (21061): Implemented 122 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 114 warnings
-    Info: Peak virtual memory: 4855 megabytes
-    Info: Processing ended: Wed Sep 25 12:12:49 2024
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:12
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 115 warnings
+    Info: Peak virtual memory: 4856 megabytes
+    Info: Processing ended: Wed Sep 25 14:33:01 2024
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:13
 
 
 +------------------------------------------+

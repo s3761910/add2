@@ -55,14 +55,14 @@ module sdram_initialize(
 //  REG/WIRE declarations
 //=======================================================
 	logic      [2:0]  next_state;
-	logic      [2:0]  state       = 3'b000;	//State register
-	logic      [3:0]  command     = 4'h0;		//Command register to be sent to SDRAM
-	logic     [12:0]  address     = 13'h0;	//Address register
-	logic      [1:0]  bank        = 2'b00;	//Bank register
-	logic      [1:0]  dqm         = 2'b11;	//Masking registers for write mode making the input data buffer 
-	logic             ready       = 1'b0;
-	logic     [15:0]  counter     = 16'h0;
-	logic             ctr_reset   = 0;
+	logic      [2:0]  state       ;	//State register
+	logic      [3:0]  command     ;		//Command register to be sent to SDRAM
+	logic     [12:0]  address     ;	//Address register
+	logic      [1:0]  bank        ;	//Bank register
+	logic      [1:0]  dqm         ;	//Masking registers for write mode making the input data buffer 
+	logic             ready       ;
+	logic     [15:0]  counter     ;
+	logic             ctr_reset   ;
 	logic	ref_cycles;
 	logic	init_begin_counter;
  
@@ -100,8 +100,10 @@ module sdram_initialize(
 	end
 
 	//ref_cycles > 16 - refresh, nop - 8 times
-	assign ref_cycles = (counter >= 15);
+	assign ref_cycles = (counter >= 16);
 	assign init_begin_counter = (counter >= 10000);
+	// assign ref_cycles = (counter >= 15);
+	// assign init_begin_counter = (counter >= 10000);
 
 	//State Transition 
 	always_ff @(posedge iclk)
@@ -167,7 +169,7 @@ module sdram_initialize(
 					address             =  13'b0000000000000;   
 					bank                =  2'b00;
 					ready               =  1'b0;
-					ctr_reset           =  1'b1;
+					ctr_reset           =  1'b0;
 				end
 			IDLE:
 			begin            

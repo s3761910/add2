@@ -1,5 +1,5 @@
 Flow report for mile1
-Wed Sep 25 12:13:27 2024
+Wed Sep 25 14:33:38 2024
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -40,15 +40,15 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Wed Sep 25 12:13:20 2024       ;
+; Flow Status                     ; Successful - Wed Sep 25 14:33:32 2024       ;
 ; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                   ; mile1                                       ;
 ; Top-level Entity Name           ; sdram_controller_test                       ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSXFC6D6F31C6                              ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 64 / 41,910 ( < 1 % )                       ;
-; Total registers                 ; 90                                          ;
+; Logic utilization (in ALMs)     ; 63 / 41,910 ( < 1 % )                       ;
+; Total registers                 ; 84                                          ;
 ; Total pins                      ; 137 / 499 ( 27 % )                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 5,662,720 ( 0 % )                       ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/25/2024 12:12:42 ;
+; Start date & time ; 09/25/2024 14:32:53 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; mile1               ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name             ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 817177921067.172724116208508           ; --            ; --                      ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 817177921067.172724957313392           ; --            ; --                      ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --                      ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --                      ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --                      ; eda_board_design_signal_integrity ;
@@ -106,11 +106,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4855 MB             ; 00:00:12                           ;
-; Fitter               ; 00:00:24     ; 1.0                     ; 6779 MB             ; 00:00:57                           ;
-; Assembler            ; 00:00:04     ; 1.0                     ; 4837 MB             ; 00:00:04                           ;
-; Timing Analyzer      ; 00:00:05     ; 1.1                     ; 5170 MB             ; 00:00:05                           ;
-; Total                ; 00:00:40     ; --                      ; --                  ; 00:01:18                           ;
+; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4856 MB             ; 00:00:13                           ;
+; Fitter               ; 00:00:24     ; 1.0                     ; 6778 MB             ; 00:00:57                           ;
+; Assembler            ; 00:00:05     ; 1.0                     ; 4838 MB             ; 00:00:04                           ;
+; Timing Analyzer      ; 00:00:05     ; 1.1                     ; 5167 MB             ; 00:00:05                           ;
+; Total                ; 00:00:42     ; --                      ; --                  ; 00:01:19                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

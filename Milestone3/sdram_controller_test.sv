@@ -114,7 +114,7 @@ module sdram_controller_test(
 	// assign GPIO[30] = CLOCK_50;
 	// assign GPIO[31] = CLOCK_50;
 
-
+	assign data            =  read_data;
 	assign  write_command   = ~KEY[0];
 	assign  read_command    = ~KEY[1];
 	assign  reset 			= ~KEY[2];
@@ -161,9 +161,8 @@ module sdram_controller_test(
 	
 	//Output logic computation for the FSM
 	always_comb begin
-		data            =  read_data;
-		write_request   =  1'b0;
-		read_request    =  1'b0;
+		// write_request   =  1'b0;
+		// read_request    =  1'b0;
 		case(state)
 			INIT:
 			begin
@@ -190,7 +189,11 @@ module sdram_controller_test(
 			begin
 				write_request   =  1'b0;
 				read_request    =  1'b0;
-				data            =  read_data;
+				// data            =  read_data;
+			end
+			default begin
+				write_request   =  1'b1;
+				read_request    =  1'b1;
 			end
 		endcase
 	end
