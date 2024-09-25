@@ -1,5 +1,5 @@
 Timing Analyzer report for mile1
-Wed Sep 25 14:53:01 2024
+Wed Sep 25 15:03:52 2024
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -101,16 +101,16 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 6           ;
 ;                            ;             ;
-; Average used               ; 1.10        ;
+; Average used               ; 1.09        ;
 ; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   2.0%      ;
-;     Processor 3            ;   1.9%      ;
-;     Processor 4            ;   1.9%      ;
-;     Processor 5            ;   1.9%      ;
-;     Processor 6            ;   1.9%      ;
+;     Processor 2            ;   1.8%      ;
+;     Processor 3            ;   1.8%      ;
+;     Processor 4            ;   1.8%      ;
+;     Processor 5            ;   1.8%      ;
+;     Processor 6            ;   1.7%      ;
 +----------------------------+-------------+
 
 
@@ -1351,7 +1351,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Wed Sep 25 14:52:56 2024
+    Info: Processing started: Wed Sep 25 15:03:47 2024
 Info: Command: quartus_sta mile1 -c mile1
 Info: qsta_default_script.tcl version: #2
 Warning (20013): Ignored 24 assignments for entity "Assessment_3_Milestone3" -- entity does not exist in design
@@ -1531,8 +1531,8 @@ Info (332146): Worst-case minimum pulse width slack is -0.093
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 57 warnings
-    Info: Peak virtual memory: 5170 megabytes
-    Info: Processing ended: Wed Sep 25 14:53:01 2024
+    Info: Peak virtual memory: 5168 megabytes
+    Info: Processing ended: Wed Sep 25 15:03:52 2024
     Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:05
 

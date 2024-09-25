@@ -1,5 +1,5 @@
 Fitter report for mile1
-Wed Sep 25 14:52:49 2024
+Wed Sep 25 15:03:37 2024
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -63,7 +63,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Wed Sep 25 14:52:49 2024       ;
+; Fitter Status                   ; Successful - Wed Sep 25 15:03:37 2024       ;
 ; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                   ; mile1                                       ;
 ; Top-level Entity Name           ; sdram_controller_test                       ;
@@ -153,12 +153,12 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 6           ;
 ;                            ;             ;
-; Average used               ; 1.01        ;
+; Average used               ; 1.02        ;
 ; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.3%      ;
+;     Processor 2            ;   0.4%      ;
 ;     Processor 3            ;   0.3%      ;
 ;     Processor 4            ;   0.3%      ;
 ;     Processor 5            ;   0.3%      ;
@@ -2414,9 +2414,9 @@ Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:03
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file C:/Users/s3818101/Desktop/ADD2/Assessment_3/25_9/Milestone3/output_files/mile1.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 24 warnings
-    Info: Peak virtual memory: 6776 megabytes
-    Info: Processing ended: Wed Sep 25 14:52:49 2024
-    Info: Elapsed time: 00:00:24
+    Info: Peak virtual memory: 6772 megabytes
+    Info: Processing ended: Wed Sep 25 15:03:38 2024
+    Info: Elapsed time: 00:00:27
     Info: Total CPU time (on all processors): 00:00:59
 
 
