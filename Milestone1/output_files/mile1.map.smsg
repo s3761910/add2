@@ -1,0 +1,16 @@
+Warning (10273): Verilog HDL warning at sdram_write.sv(60): extended using "x" or "z" File: C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3/Milestone1/sdram_write.sv Line: 60
+Warning (10273): Verilog HDL warning at sdram_write.sv(61): extended using "x" or "z" File: C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3/Milestone1/sdram_write.sv Line: 61
+Warning (10273): Verilog HDL warning at sdram_write.sv(62): extended using "x" or "z" File: C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3/Milestone1/sdram_write.sv Line: 62
+Warning (10273): Verilog HDL warning at sdram_write.sv(63): extended using "x" or "z" File: C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3/Milestone1/sdram_write.sv Line: 63
+Warning (10273): Verilog HDL warning at sdram_read.sv(70): extended using "x" or "z" File: C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3/Milestone1/sdram_read.sv Line: 70
+Warning (10273): Verilog HDL warning at sdram_read.sv(71): extended using "x" or "z" File: C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3/Milestone1/sdram_read.sv Line: 71
+Warning (10273): Verilog HDL warning at sdram_read.sv(72): extended using "x" or "z" File: C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3/Milestone1/sdram_read.sv Line: 72
+Warning (10273): Verilog HDL warning at sdram_read.sv(73): extended using "x" or "z" File: C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3/Milestone1/sdram_read.sv Line: 73
+Warning (10273): Verilog HDL warning at sdram_initialize.sv(86): extended using "x" or "z" File: C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3/Milestone1/sdram_initialize.sv Line: 86
+Warning (10273): Verilog HDL warning at sdram_initialize.sv(87): extended using "x" or "z" File: C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3/Milestone1/sdram_initialize.sv Line: 87
+Warning (10273): Verilog HDL warning at sdram_initialize.sv(88): extended using "x" or "z" File: C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3/Milestone1/sdram_initialize.sv Line: 88
+Warning (10273): Verilog HDL warning at sdram_initialize.sv(89): extended using "x" or "z" File: C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3/Milestone1/sdram_initialize.sv Line: 89
+Warning (10273): Verilog HDL warning at sdram_initialize.sv(92): extended using "x" or "z" File: C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3/Milestone1/sdram_initialize.sv Line: 92
+Info (10281): Verilog HDL Declaration information at sdram_controller.sv(60): object "init_fin" differs only in case from object "INIT_FIN" in the same scope File: C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3/Milestone1/sdram_controller.sv Line: 60
+Info (10281): Verilog HDL Declaration information at sdram_controller.sv(76): object "read_fin" differs only in case from object "READ_FIN" in the same scope File: C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3/Milestone1/sdram_controller.sv Line: 76
+Info (10281): Verilog HDL Declaration information at sdram_controller.sv(52): object "read_ack" differs only in case from object "READ_ACK" in the same scope File: C:/Users/tranm/Desktop/ADD2/Assessment_3/Assessment_3/Milestone1/sdram_controller.sv Line: 52
